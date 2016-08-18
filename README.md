@@ -1,2 +1,2 @@
-# pref-warehouse
+# Preference Warehouse
 Preference Warehouse
