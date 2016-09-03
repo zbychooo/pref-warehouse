@@ -46,7 +46,11 @@ public class CategoryServiceImpl implements CategoryService {
         return categoryRepository.findOne(id);
     }
 
-    public Category getRoot() {
+    public Category findRoot() {
         return categoryRepository.getRoot();
+    }
+
+    public List<Category> findAllByParentId(Long parentId) {
+        return categoryRepository.getAllByParentId(parentId);
     }
 }

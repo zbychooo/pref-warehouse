@@ -18,5 +18,7 @@ public interface CategoryService {
 
     Category findById(Long id);
 
-    Category getRoot();
+    Category findRoot();
+
+    List<Category> findAllByParentId(Long parentId);
 }
