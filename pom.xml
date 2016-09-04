@@ -4,6 +4,18 @@
     <groupId>com.pref</groupId>
     <artifactId>Preference-Warehouse</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <name>Preference Warehouse</name>
     <description>Preference Warehouse</description>
     <url>https://github.com/zbychooo/pref-warehouse</url>
@@ -61,11 +73,11 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.version}</version>
         </dependency>
-       <!-- <dependency>
+        <dependency>
             <groupId>commons-dbcp</groupId>
             <artifactId>commons-dbcp</artifactId>
             <version>1.4</version>
-        </dependency> -->
+        </dependency>
     </dependencies>
 
 </project>

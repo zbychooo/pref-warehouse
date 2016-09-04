@@ -19,6 +19,22 @@ public class Category {
     @Column(name = "parent_id")
     private Long parentId;
 
+    public Category() {
+    }
+
+    public Category(Long id, String displayName, String internalName, Long parentId) {
+        this.displayName = displayName;
+        this.id = id;
+        this.internalName = internalName;
+        this.parentId = parentId;
+    }
+
+    public Category(String internalName,  String displayName, Long parentId) {
+        this.internalName = internalName;
+        this.parentId = parentId;
+        this.displayName = displayName;
+    }
+
     public String getDisplayName() {
         return displayName;
     }
