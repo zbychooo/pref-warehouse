@@ -1,5 +1,6 @@
 package com.preference.service;
 
+import com.preference.exception.PreferenceException;
 import com.preference.model.Category;
 
 import java.util.List;
@@ -8,7 +9,7 @@ public interface CategoryService {
 
     Category create(Category category);
 
-    Category update(Category category);
+    Category update(Category category) throws PreferenceException;
 
     boolean delete(Long id);
 

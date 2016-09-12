@@ -1,5 +1,6 @@
 package com.preference.service.impl;
 
+import com.preference.exception.PreferenceException;
 import com.preference.model.Category;
 import com.preference.repository.CategoryRepository;
 import com.preference.service.CategoryService;
@@ -18,10 +19,10 @@ public class CategoryServiceImpl implements CategoryService {
         return categoryRepository.save(category);
     }
 
-    public Category update(Category category) {
+    public Category update(Category category) throws PreferenceException {
 
         if (!categoryRepository.exists(category.getId())) {
-            //throw TODO: own exception
+            throw new PreferenceException("Given category cannot be updated because does not exist in database!");
         }
         categoryRepository.updateCategory(category.getId(), category.getInternalName(),
                 category.getDisplayName(), category.getParentId());

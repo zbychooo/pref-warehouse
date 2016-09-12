@@ -14,7 +14,7 @@ public class RemoteRunner {
         ApplicationContext context = new AnnotationConfigApplicationContext(WarehouseConfig.class);
 
         CategoryService categoryService = context.getBean(CategoryServiceImpl.class);
-        Category category = new Category("root", "root", null);
+       // Category category = new Category("root", "root", null);
         //categoryService.create(category);
     }
 }
