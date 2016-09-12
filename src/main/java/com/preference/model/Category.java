@@ -10,7 +10,7 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "internal_name", nullable = false)
+    @Column(name = "internal_name", nullable = false, unique = true)
     private String internalName;
 
     @Column(name = "display_name")

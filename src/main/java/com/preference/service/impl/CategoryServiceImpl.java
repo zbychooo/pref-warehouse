@@ -21,7 +21,7 @@ public class CategoryServiceImpl implements CategoryService {
     public Category update(Category category) {
 
         if (!categoryRepository.exists(category.getId())) {
-            //throw
+            //throw TODO: own exception
         }
         categoryRepository.updateCategory(category.getId(), category.getInternalName(),
                 category.getDisplayName(), category.getParentId());
