@@ -1,9 +1,8 @@
 package com.preference.service.impl;
 
-import com.preference.service.CategoryService;
 import com.preference.model.Category;
 import com.preference.repository.CategoryRepository;
-import org.springframework.context.annotation.Bean;
+import com.preference.service.CategoryService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -24,11 +23,10 @@ public class CategoryServiceImpl implements CategoryService {
         if (!categoryRepository.exists(category.getId())) {
             //throw
         }
-//        categoryRepository.updateCategory(category.getId(), category.getInternalName(),
-//                category.getDisplayName(), category.getParentId());
+        categoryRepository.updateCategory(category.getId(), category.getInternalName(),
+                category.getDisplayName(), category.getParentId());
 
-        //TODO!!!!
-        return null;
+        return findById(category.getId());
     }
 
     public boolean delete(Long id) {
@@ -51,10 +49,10 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     public Category findRoot() {
-        return null;//categoryRepository.getRoot();
+        return categoryRepository.findRoot();
     }
 
     public List<Category> findAllByParentId(Long parentId) {
-        return null; //categoryRepository.getAllByParentId(parentId);
+        return categoryRepository.findAllByParentId(parentId);
     }
 }

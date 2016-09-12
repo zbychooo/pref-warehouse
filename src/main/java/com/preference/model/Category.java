@@ -29,7 +29,7 @@ public class Category {
         this.parentId = parentId;
     }
 
-    public Category(String internalName,  String displayName, Long parentId) {
+    public Category(String internalName, String displayName, Long parentId) {
         this.internalName = internalName;
         this.parentId = parentId;
         this.displayName = displayName;

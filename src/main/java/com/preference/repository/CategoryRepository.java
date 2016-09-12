@@ -9,13 +9,14 @@ import java.util.List;
 
 public interface CategoryRepository extends JpaRepository<Category, Long> {
 
-//    @Query("SELECT pc FROM PreferenceCategory pc WHERE pc.parent_id=null")
-//    Category getRoot();
-//
-////    @Query("Update PreferenceCategory pc SET pc.internal_name= :internal_name, pc.display_name = :display_name, pc.parent_id= :parent_id WHERE pc.id = :id")
-////    void updateCategory(@Param("id") Long id, @Param("internal_name") String internalName,
-////                            @Param("display_name") String displayName, @Param("parent_id") Long parentId);
-//
-//    @Query("SELECT pc FROM PreferenceCategory pc WHERE pc.parent_id= :parent_id")
-//    List<Category> getAllByParentId(@Param("parent_id") Long parentId);
+    // name is taken from class, not from table...
+    @Query(value = "SELECT c FROM Category c WHERE c.id=null")
+    Category findRoot();
+
+    @Query("Update Category c SET c.internalName= :internal_name, c.displayName = :display_name, c.parentId= :parent_id WHERE c.id = :id")
+    void updateCategory(@Param("id") Long id, @Param("internal_name") String internalName,
+                        @Param("display_name") String displayName, @Param("parent_id") Long parentId);
+
+    @Query("SELECT c FROM Category c WHERE c.parentId= :parentId")
+    List<Category> findAllByParentId(@Param("parentId") Long parentId);
 }
