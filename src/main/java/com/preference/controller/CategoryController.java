@@ -1,6 +1,6 @@
 package com.preference.controller;
 
-import com.preference.com.preference.service.CategoryService;
+import com.preference.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class CategoryController {

@@ -1,4 +1,4 @@
-package com.preference.com.preference.service;
+package com.preference.service;
 
 import com.preference.model.Category;
 

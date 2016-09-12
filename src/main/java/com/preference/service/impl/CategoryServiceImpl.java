@@ -1,6 +1,6 @@
-package com.preference.com.preference.service.impl;
+package com.preference.service.impl;
 
-import com.preference.com.preference.service.CategoryService;
+import com.preference.service.CategoryService;
 import com.preference.model.Category;
 import com.preference.repository.CategoryRepository;
 import org.springframework.context.annotation.Bean;
