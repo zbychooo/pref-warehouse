@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = " PreferenceCategory")
-public class Category {
+public class Category implements Preferenceable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -45,10 +45,6 @@ public class Category {
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getInternalName() {
