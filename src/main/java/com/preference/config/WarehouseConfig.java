@@ -63,5 +63,4 @@ public class WarehouseConfig {
         transactionManager.setEntityManagerFactory(configureEntityManager().getObject());
         return transactionManager;
     }
-
 }
