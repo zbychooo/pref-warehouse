@@ -23,7 +23,7 @@ public class RemoteRunner {
 
 
         PreferenceService preferenceService = context.getBean(PreferenceServiceImpl.class);
-        Preference preference = new Preference("inter","display",1L, ValueType.BOOLEAN, "true");
+        Preference preference = new Preference("inter", "display", 1L, ValueType.BOOLEAN, "true");
         preferenceService.create(preference);
 
     }
