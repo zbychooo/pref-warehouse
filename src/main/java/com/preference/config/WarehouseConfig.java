@@ -49,7 +49,7 @@ public class WarehouseConfig {
 
         Map<String, Object> properties = new HashMap<>();
         properties.put("hibernate.dialect", env.getProperty("com.pref.hibernate.dialect"));
-        properties.put("hibernate.hbm2ddl.auto", env.getProperty("com.pref.hibernate.hbm2ddl"));
+        properties.put("hibernate.hbm2ddl.auto", env.getProperty("com.pref.hibernate.hbm2ddl.auto"));
         properties.put("hibernate.show_sql", env.getProperty("com.pref.hibernate.show_sql"));
         properties.put("hibernate.format_sql", env.getProperty("com.pref.hibernate.format_sql"));
 
