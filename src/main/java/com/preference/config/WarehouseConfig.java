@@ -6,8 +6,12 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.jdbc.datasource.init.DatabasePopulator;
+import org.springframework.jdbc.datasource.init.DatabasePopulatorUtils;
+import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -36,8 +40,19 @@ public class WarehouseConfig {
         dataSource.setUrl(env.getProperty("com.pref.database.url"));
         dataSource.setUsername(env.getProperty("com.pref.database.username"));
         dataSource.setPassword(env.getProperty("com.pref.database.password"));
+
+        //DatabasePopulatorUtils.execute(configureDatabasePopulator(), dataSource);
+
         return dataSource;
     }
+
+    public DatabasePopulator configureDatabasePopulator() {
+        final ResourceDatabasePopulator databasePopulator = new ResourceDatabasePopulator();
+        databasePopulator.setContinueOnError(true);
+        databasePopulator.addScript(new ClassPathResource("00testdata.sql"));
+        return databasePopulator;
+    }
+
 
     @Bean(name = "entityManagerFactory")
     public LocalContainerEntityManagerFactoryBean configureEntityManager() {

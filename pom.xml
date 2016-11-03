@@ -125,6 +125,8 @@
                     <url>http://127.0.0.1:8080/manager/text</url>
                     <server>TomcatServer</server>
                     <path>/prefWarehouse</path>
+                    <username>tomcat</username>
+                    <password>tomcatuser</password>
                 </configuration>
             </plugin>
         </plugins>
